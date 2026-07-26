@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: searched
+note: Probed the well-known discovery surface on the web, API, and auth hosts. No document returned 200; nothing saved. Recorded for auditability.
+hosts:
+  - host: https://contaazul.com
+    documents:
+      - {path: /.well-known/security.txt, status: 403}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+  - host: https://api.contaazul.com
+    documents:
+      - {path: /.well-known/openid-configuration, status: 401}
+      - {path: /.well-known/oauth-authorization-server, status: 401}
+  - host: https://auth.contaazul.com
+    documents:
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/jwks.json, status: 404}

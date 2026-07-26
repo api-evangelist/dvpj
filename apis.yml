@@ -1,20 +1,83 @@
 aid: dvpj
-name: DVPJ
-description: DVPJ is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/dvpj.png
+name: Conta Azul
+description: >-
+  Conta Azul is a Brazilian financial-management and ERP platform for small and
+  medium-sized businesses, providing cash-flow control, bank reconciliation,
+  electronic invoicing (NF-e/NFS-e/NFC-e), sales and customer management,
+  automatic collections, inventory, supplier management and recurring contracts.
+  Its developer platform exposes REST/JSON APIs (api-v2.contaazul.com) secured
+  with OAuth 2.0 (AWS Cognito, Authorization Code flow) covering Financeiro,
+  Cobranças, Baixas, Vendas, Pessoas/Fornecedores, Produtos e Serviços, Notas
+  Fiscais and Contratos, so partner systems (BI, CRM, e-commerce) can integrate
+  with the ERP. Surfaced to the API Evangelist network from a 500 Global
+  portfolio stub (originally mislabeled "DVPJ") and enriched here.
 url: https://raw.githubusercontent.com/api-evangelist/dvpj/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-portfolio-lead
+x-stub-name: DVPJ
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- ERP
+- Financial
+- Accounting
+- Invoicing
+- Payments
+- SMB
+- Brazil
+- OAuth
+apis:
+- name: Conta Azul API
+  description: >-
+    REST/JSON API for the Conta Azul ERP, organized by functional area
+    (Financeiro, Cobranças, Baixas, Vendas, Pessoas, Produtos, Serviços, Notas
+    Fiscais, Contratos), secured with OAuth 2.0 Authorization Code (AWS Cognito).
+  humanURL: https://developers.contaazul.com
+  baseURL: https://api-v2.contaazul.com/v1
+  tags:
+  - ERP
+  - Financial
+  - Accounting
+  properties:
+  - type: Authentication
+    url: authentication/dvpj-authentication.yml
+  - type: OAuthScopes
+    url: scopes/dvpj-scopes.yml
+  - type: Conventions
+    url: conventions/dvpj-conventions.yml
+  - type: RateLimits
+    url: rate-limits/dvpj-rate-limits.yml
+  - type: ErrorCatalog
+    url: errors/dvpj-error-codes.yml
+  - type: ChangeLog
+    url: changelog/dvpj-changelog.yml
+  - type: Lifecycle
+    url: lifecycle/dvpj-lifecycle.yml
+  - type: Conformance
+    url: conformance/dvpj-conformance.yml
+  - type: DataModel
+    url: data-model/dvpj-data-model.yml
+  - type: LLMsTxt
+    url: llms/dvpj-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +86,62 @@ maintainers:
 common:
 - type: Website
   url: https://contaazul.com
+- type: DeveloperPortal
+  url: https://developers.contaazul.com
+- type: Documentation
+  url: https://developers.contaazul.com/introduction
+- type: APIReference
+  url: https://developers.contaazul.com/aboutapis
+- type: GettingStarted
+  url: https://developers.contaazul.com/guide
+- type: Authentication
+  url: authentication/dvpj-authentication.yml
+- type: OAuthScopes
+  url: scopes/dvpj-scopes.yml
+- type: Conventions
+  url: conventions/dvpj-conventions.yml
+- type: RateLimits
+  url: rate-limits/dvpj-rate-limits.yml
+- type: ErrorCatalog
+  url: errors/dvpj-error-codes.yml
+- type: ChangeLog
+  url: changelog/dvpj-changelog.yml
+- type: Lifecycle
+  url: lifecycle/dvpj-lifecycle.yml
+- type: StatusPage
+  url: https://status.contaazul.com
+- type: Deprecation
+  url: https://developers.contaazul.com/migration
+- type: Conformance
+  url: conformance/dvpj-conformance.yml
+- type: Compliance
+  url: https://contaazul.com/seguranca/
+- type: DataModel
+  url: data-model/dvpj-data-model.yml
+- type: DomainSecurity
+  url: security/dvpj-domain-security.yml
+- type: LLMsTxt
+  url: llms/dvpj-llms.txt
+- type: Support
+  url: https://ajuda.contaazul.com/hc/pt-br
+- type: HelpCenter
+  url: https://ajuda.contaazul.com/hc/pt-br
+- type: Blog
+  url: https://contaazul.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/contaazul
+- type: Pricing
+  url: https://contaazul.com/planos/
+- type: SignUp
+  url: https://contaazul.com/cadastro/
+- type: Login
+  url: https://auth.contaazul.com/login
+- type: TermsOfService
+  url: https://contaazul.com/termos/
+- type: PrivacyPolicy
+  url: https://contaazul.com/termos/privacidade/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
