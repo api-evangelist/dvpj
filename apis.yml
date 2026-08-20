@@ -44,6 +44,16 @@ tags:
 - Payments
 - SMB
 - Brazil
+- Authentication
+tags_raw:
+- Company
+- ERP
+- Financial
+- Accounting
+- Invoicing
+- Payments
+- SMB
+- Brazil
 - OAuth
 apis:
 - name: Conta Azul API
